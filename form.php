@@ -1,6 +1,28 @@
 <?php
 require_once 'config.php';
+
+if (isset($_POST["submit"])) {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $age = $_POST["age"];
+    $class = $_POST["class"];
+    $insta = $_POST["insta"];
+    $address = $_POST["address"];
+
+    $sql = "INSERT INTO tb_student (name, email, age, class, insta, address) VALUES ('$name', '$email', '$age', '$class', '$insta', '$address')";
+    if ($conn->query($sql) === TRUE) {
+        $message = '<div class="alert alert-success" role="alert">
+                        Data berhasil di tambah
+                    </div>';
+    } else {
+        $message = '<div class="alert alert-danger" role="alert">
+                        Gagal menambah data
+                    </div>';
+    }
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +34,7 @@ require_once 'config.php';
 </head>
 
 <body>
-    <!-- navbar start -->
-    <nav class="navbar navbar-expand-lg  bg-secondary-subtle">
+    <nav class="navbar navbar-expand-lg bg-secondary-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
                 <img src="assets/img/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top">
@@ -35,37 +56,11 @@ require_once 'config.php';
             </div>
         </div>
     </nav>
-    <!-- navbar end -->
-
-    <!-- form start -->
     <main class="container-fluid py-3">
         <div class="row">
             <div class="col"></div>
             <div class="col-9">
-                <!-- CREATE SYSTEM START -->
-                <?php
-                if (isset($_POST["submit"])) :
-                    $sql = "INSERT INTO tb_student VALUES (
-											null,
-                                            '" . $_POST["name"] . "',
-                                            '" . $_POST["email"] . "',
-                                            '" . $_POST["age"] . "',
-                                            '" . $_POST["class"] . "',
-											'" . $_POST["insta"] . "',
-											'" . $_POST["address"] . "'
-                                            )";
-                    if (mysqli_query($conn, $sql)) : ?>
-                        <div class="alert alert-success" role="alert">
-                            Data siswa berhasil ditambah
-                        </div>
-                    <?php else : ?>
-                        <div class="alert alert-danger" role="alert">
-                            Tidak dapat menambah data siswa
-                        </div>
-                <?php endif;
-                endif;
-                ?>
-                <!-- CREATE SYSTEM END -->
+                <?php if (isset($message)) echo $message; ?>
                 <div class="card">
                     <div class="card-header">
                         Input Data Siswa
@@ -104,7 +99,6 @@ require_once 'config.php';
             <div class="col"></div>
         </div>
     </main>
-    <!-- form end -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
