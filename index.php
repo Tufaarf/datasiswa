@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Data</title>
 </head>
-
 <body>
+    <!-- navbar start -->
     <nav class="navbar navbar-expand-lg bg-secondary-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
@@ -31,11 +31,14 @@
             </div>
         </div>
     </nav>
+    <!-- navbar end -->
+
+    <!-- carousel start -->
     <main class="container-fluid py-3">
         <div class="row">
             <div class="col"></div>
             <div class="col-9">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -45,22 +48,22 @@
                         <div class="carousel-item active" data-bs-interval="10000">
                             <img src="assets/img/carousel1.jpg" class="d-block w-100" alt="placeholder 1">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Pemandangan Alam</h5>
-                                <p>Pemandangan alam adalah keindahan alam yang dapat dipersepsikan melalui komponen mata dalam pancaindra manusia.</p>
+                                <h5>Ini Carousel</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam consequuntur vel provident laboriosam quidem tempore, eligendi quia cupiditate alias, voluptatum, praesentium ex? Iure praesentium veniam modi quas dignissimos. Eum, fugiat!</p>
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
                             <img src="assets/img/carousel2.jpg" class="d-block w-100" alt="placeholder 2">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Pemandangan Alam</h5>
-                                <p>Sketsa pemandangan alam dalam seni lukis biasanya terdiri dari komponen-komponen seperti pepohonan, semak-semak, daratan, bukit, lembah, air ataupun sejumlah benda buatan manusia contohnya rumah, jembatan, mobil dll.</p>
+                                <h5>Ini Carousel</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error fuga et at dolores numquam accusantium impedit recusandae itaque reprehenderit, nam cumque quasi odio labore neque sit vero explicabo nemo consectetur.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="assets/img/carousel3.jpg" class="d-block w-100" alt="placeholder 3">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Pemandangan Alam</h5>
-                                <p>Pemandangan alam merupakan suatu hal yang perlu dilindungi atau dijaga karena bertujuan untuk melindungi keindahan alam.</p>
+                                <h5>Ini Carousel</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus neque perferendis, distinctio eius culpa possimus quasi provident dignissimos iste aperiam doloribus, nulla at! Perspiciatis ab maxime blanditiis quidem quod repellendus.</p>
                             </div>
                         </div>
                     </div>
@@ -77,7 +80,9 @@
             <div class="col"></div>
         </div>
     </main>
+    <!-- carousel end -->
+
+    <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>

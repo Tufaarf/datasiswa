@@ -8,15 +8,16 @@ require_once 'config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Data siswa</title>
 </head>
 
 <body>
+    <!-- navbar start -->
     <nav class="navbar navbar-expand-lg  bg-secondary-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <img src="assets/images/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top">
+                <img src="assets/img/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top">
                 SMK NEGERI 1 PROBOLINGGO
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +36,9 @@ require_once 'config.php';
             </div>
         </div>
     </nav>
+    <!-- navbar end -->
+
+    <!-- table start -->
     <main class="container-fluid py-3">
         <div class="row">
             <div class="col"></div>
@@ -59,6 +63,7 @@ require_once 'config.php';
                             </thead>
                             <tbody>
                             <tbody>
+                                <!-- CRUD SYSTEM START -->
                                 <?php 
                                 $number = 1;
                                 $sql = "SELECT * FROM tb_student WHERE name LIKE '%".($_GET['query']??"")."%' 
@@ -74,12 +79,13 @@ require_once 'config.php';
                                         <td><?= $data['insta'] ?></td>
                                         <td><?= $data['address'] ?></td>
                                         <td>
-                                            <form method="POST" action="hapus-siswa.php">
+                                            <form method="POST" action="delete_data.php">
                                                 <button type="submit" class="btn btn-danger" name="id" value="<?= $data['id'] ?>">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
                                 <?php endwhile ?>
+                                <!-- CRUD SYSTEM END -->
                             </tbody>
                             </tbody>
                         </table>
@@ -89,6 +95,9 @@ require_once 'config.php';
             <div class="col"></div>
         </div>
     </main>
+    <!-- table end -->
+
+    <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
